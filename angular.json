@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/main.scss"
             ],
             "scripts": []
           },
@@ -123,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "scroll-page"
+    }
+  },
+  "defaultProject": "scroll-page",
+  "cli": {
+    "analytics": false
+  }
 }

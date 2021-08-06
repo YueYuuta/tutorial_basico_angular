@@ -1,0 +1,138 @@
+<section class="qualification section">
+    <h2 class="section__title">Cualificado</h2>
+    <span class="section__subtitle">Mi presentacion personal</span>
+    <div class="qualification__container containerPersonal">
+        <div class="qualification__tabs">
+            <div (click)="cambioOpenLIst('educacion')" class="qualification__button button--flex "
+                [ngClass]="{'qualification__active': openList === 'educacion'}">
+                <i class="fas fa-graduation-cap qualification__icon"></i>
+                Educacion
+            </div>
+
+            <div (click)="cambioOpenLIst('trabajo')" class="qualification__button button--flex"
+                [ngClass]="{'qualification__active': openList === 'trabajo'}">
+                <i class="fas fa-briefcase qualification__icon"></i>
+                Trabajo
+            </div>
+        </div>
+
+        <div class="qualification__sections">
+            <!-- cualificacion contenido 1 -->
+            <div class="qualification__content" [ngClass]="{'qualification__active': openList === 'educacion'}"
+                data-content>
+
+                <!-- contenido 1 -->
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">Ingeniero en esistemas</h3>
+                        <span class="qualification__subtitle">Ecuador - UNEMI</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2014-2019</div>
+                    </div>
+
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                </div>
+
+                <!-- contenido 2 -->
+                <div class="qualification__data">
+                    <div></div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                        <h3 class="qualification__title">Diseñador web</h3>
+                        <span class="qualification__subtitle">Ecuador - Coradi</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2013-2014</div>
+                    </div>
+
+
+                </div>
+
+                <!-- contenido 3 -->
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">Desarrollador web </h3>
+                        <span class="qualification__subtitle">Ecuador - Instituto</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2015-2018</div>
+                    </div>
+
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                </div>
+
+                <!-- contenido 4 -->
+                <div class="qualification__data">
+                    <div></div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <!-- <span class="qualification__line"></span> -->
+                    </div>
+                    <div>
+                        <h3 class="qualification__title">Master EN Ui Ux</h3>
+                        <span class="qualification__subtitle">Ecuador - Instituto</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2018-2022</div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- cualificacion contenido 1 -->
+            <div class="qualification__content" [ngClass]="{'qualification__active': openList === 'trabajo'}"
+                data-content>
+
+                <!-- contenido 1 -->
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">Ingeniero en esistemas</h3>
+                        <span class="qualification__subtitle">Ecuador - UNEMI</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2014-2019</div>
+                    </div>
+
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                </div>
+
+                <!-- contenido 2 -->
+                <div class="qualification__data">
+                    <div></div>
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                        <h3 class="qualification__title">Diseñador web</h3>
+                        <span class="qualification__subtitle">Ecuador - Coradi</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2013-2014</div>
+                    </div>
+
+
+                </div>
+
+                <!-- contenido 3 -->
+                <div class="qualification__data">
+                    <div>
+                        <h3 class="qualification__title">Desarrollador web </h3>
+                        <span class="qualification__subtitle">Ecuador - Instituto</span>
+                        <div class="qualification__calendar"><i class="fas fa-calendar-alt"></i> 2015-2018</div>
+                    </div>
+
+                    <div>
+                        <span class="qualification__rounder"></span>
+                        <!-- <span class="qualification__line"></span> -->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

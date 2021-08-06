@@ -1,0 +1,186 @@
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+button.top {
+  position: fixed;
+  display: inline-block;
+  right: 5%;
+  outline: none;
+  bottom: 10%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  svg {
+    width: inherit;
+    height: inherit;
+    fill: var(--first-color);
+  }
+}
+
+.containerColores {
+  display: flex;
+  position: fixed;
+  top: 4.5rem;
+  right: 4rem;
+  // right: 20px;
+}
+
+.list {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40rem;
+  filter: url(#goo);
+
+  button {
+    background: var(--first-color);
+    z-index: 100;
+    outline: none;
+    border: 0;
+    width: 45px;
+    cursor: pointer;
+    height: 45px;
+    border-radius: 50%;
+    color: #f7f7f7;
+    font-size: 30px;
+    filter: url(#goo);
+
+    &.shake {
+      animation: animateIn 0.5s forwards;
+    }
+    &.reset {
+      animation: animateOut 0.5s forwards;
+    }
+
+    span {
+      display: inline-block;
+
+      &.rotate {
+        animation: rotateIn 0.5s forwards;
+      }
+      &.reset {
+        animation: rotateOut 0.5s forwards;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 10;
+    transform: translateY(-80px);
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes animateIn {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateOut {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.colorPurple {
+  cursor: pointer;
+  background-color: hsl(250, 69%, 61%);
+}
+.colorGreen {
+  cursor: pointer;
+  background-color: hsl(142, 69%, 61%);
+}
+
+.colorPink {
+  cursor: pointer;
+  background-color: hsl(340, 69%, 61%);
+}
+.colorPurple:hover {
+  background-color: hsl(250, 45%, 45%);
+}
+.colorGreen:hover {
+  background-color: hsl(142, 45%, 45%);
+}
+.colorPink:hover {
+  background-color: hsl(340, 45%, 45%);
+}
+.mostrarBotonColor {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+.ocultarBotonColor {
+  visibility: visible;
+  opacity: 1;
+}
