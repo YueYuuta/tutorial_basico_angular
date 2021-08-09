@@ -37,6 +37,13 @@ button.top {
   }
 }
 
+@media screen and (max-width: 450px) {
+  button.top {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .containerColores {
   display: flex;
   position: fixed;
@@ -183,4 +190,15 @@ button.top {
 .ocultarBotonColor {
   visibility: visible;
   opacity: 1;
+}
+.todaLaPagina {
+  height: 100vh;
+}
+
+.color__icon {
+  font-size: 1.25rem;
+  margin-bottom: var(--mb-0-75);
+  // margin-left: var(--mb-0-5);
+  // margin-right: var(--mb-0-5);
+  // transition: 0.3s;
 }

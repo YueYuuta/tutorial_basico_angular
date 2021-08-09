@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   OnDestroy,
@@ -22,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit, OnDestroy, AfterViewInit {
   private stop$ = new Subject<void>();
   botonColores: boolean = false;
   collapsed = false;
@@ -32,11 +33,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public reachedTheEnd: boolean;
 
-  @ViewChild('inicio') home: ElementRef;
+  @ViewChild('inicio', { static: true }) home: ElementRef;
   @ViewChild('about') about: ElementRef;
   @ViewChild('skill') skill: ElementRef;
   @ViewChild('services') services: ElementRef;
   @ViewChild('qualification') qualification: ElementRef;
+  @ViewChild('portfolio') portfolio: ElementRef;
+  @ViewChild('project') project: ElementRef;
+  @ViewChild('testimonial') testimonial: ElementRef;
+  @ViewChild('contact') contact: ElementRef;
 
   title = 'scroll-page';
   seleccionado = 'Inicio';
@@ -48,6 +53,38 @@ export class AppComponent implements OnInit, OnDestroy {
     private decimalPipe: DecimalPipe,
     private readonly _navigationPages: NavegationPagesService
   ) {}
+  ngAfterViewInit(): void {}
+
+  verificarIdElemtHtml(): void {
+    const sections = [
+      this.home,
+      this.about,
+      this.contact,
+      this.services,
+      this.project,
+      this.portfolio,
+      this.skill,
+      this.qualification,
+      this.contact,
+    ];
+    const scrollY = window.pageYOffset;
+    console.log('hola', sections);
+
+    sections.forEach((element: ElementRef) => {
+      if (element) {
+        const current = element.nativeElement;
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+
+        var sectionID = current.id;
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          console.log('el id es:', sectionID);
+          this._navigationPages.seleccionado(sectionID);
+        } else {
+        }
+      }
+    });
+  }
 
   ngOnInit() {
     this.changeEstadoNav();
@@ -66,12 +103,14 @@ export class AppComponent implements OnInit, OnDestroy {
               this.decimalPipe.transform(options.progress, '1.2-2')
             );
             console.log(value);
-            this.reachedTheEnd2 = value > 0.2;
+            this.reachedTheEnd2 = value > 0.07;
             this.reachedTheEnd = value > 0.84;
+            this.verificarIdElemtHtml();
           }
         },
       },
     });
+    setTimeout(() => {}, 1000);
   }
 
   ngOnDestroy(): void {
@@ -98,6 +137,18 @@ export class AppComponent implements OnInit, OnDestroy {
           case 'Experiencia':
             this.elemetoHtmlSeleccionado(this.qualification);
             break;
+          case 'Portafolio':
+            this.elemetoHtmlSeleccionado(this.portfolio);
+            break;
+          case 'Proyecto':
+            this.elemetoHtmlSeleccionado(this.project);
+            break;
+          case 'Testimonio':
+            this.elemetoHtmlSeleccionado(this.testimonial);
+            break;
+          case 'Contacto':
+            this.elemetoHtmlSeleccionado(this.contact);
+            break;
 
           default:
             break;
@@ -107,6 +158,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   defaultTheme() {
     this.themeService.setDefaultTheme();
+    setTimeout(() => {
+      document.body.classList.add('animate-colors-transition');
+    }, 500);
   }
 
   defaultColor(): void {

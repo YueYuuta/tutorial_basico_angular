@@ -46,6 +46,26 @@ export class HeaderComponent implements OnInit, OnDestroy {
     //   icono: 'iconsminds-smartphone-4',
     //   ruta: 'app/portafolio/contactame',
     // },
+    {
+      nombre: 'Portafolio',
+      icono: 'iconsminds-management',
+      ruta: 'app/portafolio/contactame',
+    },
+    // {
+    //   nombre: 'Proyecto',
+    //   icono: 'iconsminds-smartphone-4',
+    //   ruta: 'app/portafolio/contactame',
+    // },
+    // {
+    //   nombre: 'Testimonio',
+    //   icono: 'iconsminds-smartphone-4',
+    //   ruta: 'app/portafolio/contactame',
+    // },
+    {
+      nombre: 'Contacto',
+      icono: 'iconsminds-smartphone-4',
+      ruta: 'app/portafolio/contactame',
+    },
   ];
 
   constructor(
@@ -61,6 +81,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   changeEstadoNav(pagina: string): void {
+    this.showMenu = false;
     this.seleccionado = pagina;
     this._navegationPageService.navegationPages(pagina);
   }

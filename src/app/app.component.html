@@ -1,23 +1,45 @@
 <div class="todo">
   <app-header></app-header>
   <main class="content main">
-    <div #inicio>
+    <div #inicio id="Inicio">
       <app-inicio></app-inicio>
     </div>
-    <div #about>
+    <div #about id="Acerca">
       <app-about></app-about>
     </div>
 
-    <div #skill>
+    <div #skill id="Habilidades">
       <app-skill></app-skill>
     </div>
 
-    <div #services>
+    <div #services id="Servicios">
       <app-service></app-service>
     </div>
 
-    <div #qualification>
+    <div #qualification id="Experiencia">
       <app-qualification></app-qualification>
+    </div>
+
+    <div #portfolio id="Portafolio">
+      <app-portfolio></app-portfolio>
+      <app-project></app-project>
+      <app-testimonial></app-testimonial>
+    </div>
+
+    <!-- <div #project id="Poryecto">
+      <app-project></app-project>
+      
+
+    </div>
+
+    <div #testimonial id="Testimonio">
+      <app-testimonial></app-testimonial>
+
+    </div> -->
+
+    <div #contact id="Contacto">
+      <app-contact></app-contact>
+
     </div>
 
 
@@ -41,7 +63,7 @@
   <div class="list">
     <button [ngClass]="{ shake: collapsed, reset: init && !collapsed }" (click)="toggle(menu)"
       [disabled]="botonColores">
-      <span [ngClass]="{ rotate: collapsed, reset: init && !collapsed }">+</span>
+      <span [ngClass]="{ rotate: collapsed, reset: init && !collapsed }"><i class="fas fa-tint color__icon"></i></span>
     </button>
     <div class="menu" #menu>
       <span (click)="colorPurple()" class="colorPurple"></span>

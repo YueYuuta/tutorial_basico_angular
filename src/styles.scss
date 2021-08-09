@@ -1,19 +1,24 @@
+@import "~swiper/swiper-bundle";
+@import "~swiper/swiper";
+@import "~swiper/components/navigation/navigation";
+@import "~swiper/components/pagination/pagination";
 body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: 0.5s;
 }
 
 .content {
-  margin-top: var(--header-height);
+  // margin-top: var(--header-height);
 
   section {
-    height: 100vh;
+    // height: 100vh;
   }
 
   section#home {
-    height: calc(100vh - var(--header-height));
+    // height: calc(100vh - var(--header-height));
   }
 }
